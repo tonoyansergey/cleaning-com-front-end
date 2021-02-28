@@ -1,0 +1,52 @@
+
+<div mat-dialog-content class="order-dialog">
+
+  <mat-dialog-content form [formGroup]="form">
+
+    <mat-form-field>
+      <mat-select placeholder="Тип уборки" formControlName="cleaningType">
+        <mat-option [value]=cleanType>{{cleanType.cleaningTypeDef}}</mat-option>
+        <mat-option *ngFor="let cleaningType of cleaningTypes" [value]=cleaningType>{{cleaningType.cleaningTypeDef}}</mat-option>
+      </mat-select>
+      <mat-error align="end" *ngIf="form.controls.cleaningType.errors?.required">Обязательное поле</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="number"  placeholder="КВ" formControlName="square" required>
+      <mat-error align="end" *ngIf="form.controls.square.errors?.required">Обязательное поле</mat-error>
+      <mat-error align="end" *ngIf="form.controls.square.errors?.minlength">Минимум 4 символа</mat-error>
+      <mat-error align="end" *ngIf="form.controls.square.errors?.maxlength">You have more than 32 characters</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="text" placeholder="Имя" formControlName="clientName" required>
+      <mat-hint align="end">Не больше 32 символа</mat-hint>
+      <mat-error align="end" *ngIf="form.controls.clientName.errors?.required">Обязательное поле</mat-error>
+      <mat-error align="end" *ngIf="form.controls.clientName.errors?.minlength">Не меньше 4 символа</mat-error>
+      <mat-error align="end" *ngIf="form.controls.clientName.errors?.maxlength">Не больше 32 символа</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="text" placeholder="Номер телефона" formControlName="clientPhoneNumber" required>
+      <mat-hint align="end">Not more than 32 characters long</mat-hint>
+      <mat-error align="end" *ngIf="form.controls.clientPhoneNumber.errors?.required">Обязательное поле</mat-error>
+      <mat-error align="end" *ngIf="form.controls.clientPhoneNumber.errors?.minlength">Минимум 4 символа</mat-error>
+      <mat-error align="end" *ngIf="form.controls.clientPhoneNumber.errors?.maxlength">You have more than 32 characters</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="email" placeholder="Почтовый ящик" formControlName="clientEmail">
+      <mat-hint align="end">Пр.: example@gmail.com</mat-hint>
+      <mat-error align="end" *ngIf="form.controls.clientEmail.errors?.pattern">Wrong pattern</mat-error>
+      <mat-error align="end" *ngIf="form.controls.clientEmail.errors?.emailExists">Email already used</mat-error>
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="success-action" align="center">
+    <button class="success-button" mat-raised-button color="primary" [disabled]="!form.valid || form.untouched || !form.dirty" (click)="addOrder()">Заказать</button>
+  </mat-dialog-actions>
+  <br>
+  <div class="dialog-footer">
+
+  </div>
+</div>

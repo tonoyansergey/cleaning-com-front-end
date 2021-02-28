@@ -1,0 +1,21 @@
+<main class="page service-page">
+  <section class="clean-block clean-services dark">
+    <div class="container">
+      <div class="block-heading">
+        <h2 class="text-info">Уборка для Дома</h2>
+        <p></p>
+      </div>
+      <div class="row">
+        <div *ngFor="let type of cleaningTypes" class="col-md-6 col-lg-4">
+          <div class="card"><img class="card-img-top w-100 d-block" src="assets/img/scenery/image5.jpg">
+            <div class="card-body">
+              <h4 class="card-title">{{type.cleaningTypeTitle}}</h4>
+<!--              <p class="card-text">{{type.cleaningTypeDef}}</p>-->
+            </div>
+            <div><button class="btn btn-outline-primary btn-sm" type="button" routerLink="/{{type.cleaningTypeComponent}}">Подробности</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

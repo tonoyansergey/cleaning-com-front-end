@@ -1,0 +1,128 @@
+body {
+  margin-top: 40px;
+}
+
+.dialog-footer {
+  text-align: center;
+}
+
+.mat-form-field {
+  color: #000000;
+
+}
+
+.mat-error {
+  font-size: 12px;
+  color: #005db9;
+}
+
+.mat-dialog-title {
+  color: #adb8c1;
+  text-align: center;
+}
+
+.dialog-title {
+  text-align: center;
+}
+
+.cancel-action, .success-action {
+  margin-top: 15px;
+}
+
+.success-button, .cancel-button {
+  width: 93%;
+}
+
+.mat-dialog-container {
+  /*overflow: hidden !important;*/
+  /*border-radius: 35px !important;*/
+  background-color: rgba(254, 254, 255, 0.94) !important;
+  color: #000000;
+  padding: 40px !important;
+  height: 600px;
+}
+
+.mat-dialog-container a {
+  color: #000000 !important;
+}
+
+.mat-dialog-container p {
+  color: #000000 !important;
+}
+
+.mat-dialog-container input {
+  caret-color: rgba(0,0,0,.5);
+}
+
+.mat-form-field-outline,
+.mat-form-field-empty.mat-form-field-label,::placeholder {
+  color: rgba(0,0,0,.5);
+}
+
+.mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: #000000 !important;
+}
+
+.mat-form-field-label {
+  /*change color of label*/
+  color: rgba(0,0,0,.5) !important;
+}
+
+.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: rgba(0,0,0,.5) !important;
+}
+
+.mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: #000000 !important;
+}
+
+
+.mat-focused .mat-hint {
+  font-size: 12px;
+  color: #000000 !important;
+}
+
+.mat-hint {
+  font-size: 12px;
+  color: rgba(0,0,0,.5) !important;
+}
+
+button:disabled {
+  background-color: rgba(0,0,0,.5) !important;
+}
+
+button {
+  background-color: #CBA380 !important;
+  color: #000000 !important;
+  border: none !important;
+}
+
+.main-container {
+  z-index:1;
+}
+
+.form-error {
+  font-size: 16px;
+  color: #005db9;
+  margin: 5% auto;
+}
+
+.icon {
+  color: #CBA380 !important;
+}
+
+.text-info {
+  color: #000000 !important;
+}
+
+.component-header {
+  text-align: center;
+}
+
+.component-footer {
+  text-align: center;
+  padding-bottom: 20px;
+}

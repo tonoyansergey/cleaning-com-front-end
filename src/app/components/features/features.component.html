@@ -1,0 +1,63 @@
+<!--<main class="page">-->
+<!--  <section class="clean-block features">-->
+<!--    <div class="container">-->
+<!--      <div class="block-heading">-->
+<!--        <h3 class="text-info why-us">Почему мы?</h3>-->
+<!--        <div class="row justify-content-center">-->
+<!--          <div class="col-md-5 feature-box"><i class="material-icons icon">-->
+<!--            eco-->
+<!--          </i>-->
+<!--            <h5>Использование современные препарати</h5>-->
+<!--          </div>-->
+<!--          <div class="col-md-5 feature-box"><i class="material-icons icon ">-->
+<!--            speed-->
+<!--          </i>-->
+<!--            <h5>Минимальные сроки выполнения заказа</h5>-->
+<!--          </div>-->
+
+<!--          <div class="col-md-5 feature-box">-->
+<!--            <i class="material-icons icon">-->
+<!--              how_to_reg-->
+<!--            </i>-->
+<!--            <h5>Индивидуальный подход</h5>-->
+<!--          </div>-->
+<!--          <div class="col-md-5 feature-box"><i class="material-icons icon">-->
+<!--            done_outline-->
+<!--          </i>-->
+<!--            <h5>Современное оборудование </h5>-->
+<!--          </div>-->
+<!--          <div class="col-md-5 feature-box"><i class="material-icons icon">-->
+<!--            trending_down-->
+<!--          </i>-->
+<!--            <h5>Самые низкие цены</h5>-->
+<!--          </div>-->
+<!--          <div class="col-md-5 feature-box"><i class="material-icons icon">-->
+<!--            av_timer-->
+<!--          </i>-->
+<!--            <h5>Приём заказов 24/7</h5>-->
+<!--          </div>-->
+
+<!--        </div>-->
+<!--      </div>-->
+
+<!--    </div>-->
+<!--  </section>-->
+<!--</main>-->
+
+<main class="page">
+  <section class="clean-block features">
+    <div class="container">
+      <div class="block-heading">
+        <h3 class="text-info why-us">Почему мы?</h3>
+        <div class="row justify-content-center">
+          <div *ngFor="let feature of features" class="col-md-5 feature-box"><i class="material-icons icon">
+            {{feature.featureIconText}}
+          </i>
+            <h5>{{feature.featureText}}</h5>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>

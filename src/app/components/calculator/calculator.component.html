@@ -1,0 +1,30 @@
+<section class="clean-block clean-hero" style="background-image:url(&quot;assets/img/tech/image4.jpg&quot;);color:rgba(25,19,24,0.35);">
+  <div class="calculator">
+    <h2>Уборка квартир от 1490 рублей</h2>
+    <div class="calc">
+      <form class="order-calc" form [formGroup]="form" name="form1">
+        <div class="form-group">
+          <select class="form-control item select-type" id="cleaning-type" formControlName="cleaningType" (change)="assignCleaningType()">
+<!--        <option [value]=cleaningTypes[0]>{{cleaningTypes[0].cleaningTypeDef}}</option>-->
+        <option *ngFor="let type of cleaningTypes" [ngValue]=type>{{type.cleaningTypeTitle}}</option>
+      </select>
+      <div class="radio-toolbar">
+        <input type="radio" id="fiftySquare" name="radioSquare" value="50" formControlName="radioSquare" (change)="assignSquare('radioSquare')">
+        <label for="fiftySquare">50 м<sup><small>2</small></sup></label>
+
+        <input type="radio" id="sixtySquare" name="radioSquare" value="60" formControlName="radioSquare" (change)="assignSquare('radioSquare')">
+        <label for="sixtySquare">60 м<sup><small>2</small></sup></label>
+
+        <input type="radio" id="seventySquare" name="radioSquare" value="70" formControlName="radioSquare" (change)="assignSquare('radioSquare')">
+        <label for="seventySquare">70 м<sup><small>2</small></sup></label>
+
+        <input type="radio" id="customSquare" name="radioSquare" value="" formControlName="radioSquare" (change)="assignSquare('customSquareNumber')">
+        <label for="customSquare" class="custom-square"><input type="number" id="customSquareInput" name="customSquareNumber" formControlName="customSquareNumber" (click)="checkCustomSquareRadio('customSquareNumber')" (ngModelChange)="assignSquare('customSquareNumber')"> м<sup><small>2</small></sup></label>
+      </div>
+    </div>
+    <h4>Цена от {{cleaningPrice}}</h4>
+    <button class="btn btn-primary btn-block" type="submit" (click)="order(form)">Заказать</button>
+  </form>
+    </div>
+</div>
+</section>

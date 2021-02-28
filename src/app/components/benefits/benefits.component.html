@@ -1,0 +1,44 @@
+<main class="page">
+  <section class="clean-block features">
+    <div class="container">
+      <div class="block-heading">
+        <h3 class="text-info recommendations">Наши Рекомендации и Гарантия</h3>
+        <div class="row justify-content-center">
+
+<!--          <div class="col-md-5 feature-box"><i class="material-icons icon">-->
+<!--            verified_user-->
+<!--          </i>-->
+<!--            <h5>Гарантия качества</h5>-->
+<!--            <p>Мы выполняем каждый заказ по строгому регламенту и быстро откликаемся на любые предложения и жалобы</p>-->
+<!--          </div>-->
+<!--          <div class="col-md-5 feature-box"><i class="material-icons icon">-->
+<!--            monetization_on</i>-->
+<!--            <h5>Ответственность</h5>-->
+<!--            <p>Если во время уборки квартиры что-то пойдёт не так, мы быстро возместим ущерб </p>-->
+<!--          </div>-->
+<!--          <div class="col-md-5 feature-box"><i class="material-icons icon">-->
+<!--            toys-->
+<!--          </i>-->
+<!--            <h5>Ощущение чистоты</h5>-->
+<!--            <p>Мы знаем, как создать в вашем доме ощущение чистоты. После нашей уборки дышится легче, появляется-->
+<!--              ощущение-->
+<!--              порядка и аккуратности.</p>-->
+<!--          </div>-->
+<!--          <div class="col-md-5 feature-box"><i class="material-icons icon">-->
+<!--            thumb_up-->
+<!--          </i>-->
+<!--            <h5>Доверие</h5>-->
+<!--            <p>Вы можете полностью доверять нам. Все клинеры работают в штате компании, проходят тщательную проверку и-->
+<!--              профессиональное обучение</p>-->
+<!--          </div>-->
+
+          <div *ngFor="let benefit of benefits" class="col-md-5 feature-box">
+            <i class="material-icons icon">{{benefit.iconText}}</i>
+                        <h5>{{benefit.title}}</h5>
+                        <p>{{benefit.description}}</p>
+                      </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

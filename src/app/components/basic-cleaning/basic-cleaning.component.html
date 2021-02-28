@@ -1,0 +1,16 @@
+<main class="page">
+<div class="component-header">
+  <h4>{{basicCleanings[0].title}}</h4>
+  <h5>{{basicCleanings[0].description}}</h5>
+</div>
+  <mat-tab-group animationDuration="400ms" mat-align-tabs="center" class="cleaning-details">
+
+    <mat-tab *ngFor="let base of basicCleanings[0].baseCleanings" label="{{base.category}}">
+      <img src="{{base.photo}}" alt="bedroom" class="images">
+    </mat-tab>
+
+  </mat-tab-group>
+  <div class="component-footer">
+    <button class="btn btn-outline-primary btn-sm" type="button" (click)="openCleaningInfo(basicCleanings[0].services)">Подробности</button>
+  </div>
+</main>

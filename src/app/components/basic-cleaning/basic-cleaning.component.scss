@@ -1,0 +1,27 @@
+.cleaning-details {
+  width: 70%;
+  padding: 80px 0 30px 0;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.images {
+  margin-top: 10px;
+  width: 85%;
+}
+
+.page {
+  background-color: #F6F6F6;
+}
+
+::ng-deep .mat-tab-label-active{
+  background-color: #CBA380;
+}
+
+::ng-deep .mat-tab-label {
+  width: 25% !important;
+}
+
+h4 {
+  padding-top: 100px;
+}
