@@ -6,7 +6,7 @@
         <div class="form-group">
           <select class="form-control item select-type" id="cleaning-type" formControlName="cleaningType" (change)="assignCleaningType()">
 <!--        <option [value]=cleaningTypes[0]>{{cleaningTypes[0].cleaningTypeDef}}</option>-->
-        <option *ngFor="let type of cleaningTypes" [ngValue]=type>{{type.cleaningTypeTitle}}</option>
+        <option *ngFor="let type of cleaningTypes" [ngValue]=type>{{type.title}}</option>
       </select>
       <div class="radio-toolbar">
         <input type="radio" id="fiftySquare" name="radioSquare" value="50" formControlName="radioSquare" (change)="assignSquare('radioSquare')">

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {HttpErrorResponse} from '@angular/common/http';
 import {CleaningTypeService} from '../../service/cleaning-type.service';
 import {CleaningType} from '../../models/cleaning-type';
+import {HomeCleaningService} from '../../service/home-cleaning.service';
+import {HomeCleaning} from '../../models/home-cleaning';
 
 @Component({
   selector: 'app-services',
@@ -10,16 +12,16 @@ import {CleaningType} from '../../models/cleaning-type';
 })
 export class ServicesComponent implements OnInit {
 
-  cleaningTypes: CleaningType[] = [];
+  cleaningTypes: HomeCleaning[] = [];
 
-  constructor(private cleaningTypeService: CleaningTypeService) { }
+  constructor(private homeCleaningService: HomeCleaningService) { }
 
   ngOnInit() {
     this.initCleaningTypeData();
   }
 
   initCleaningTypeData() {
-    this.cleaningTypeService.getAllCleaningTypes().subscribe(
+    this.homeCleaningService.getAllHomeCleanings().subscribe(
       data => {
         this.cleaningTypes = data;
       },

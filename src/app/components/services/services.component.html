@@ -9,10 +9,10 @@
         <div *ngFor="let type of cleaningTypes" class="col-md-6 col-lg-4">
           <div class="card"><img class="card-img-top w-100 d-block" src="assets/img/scenery/image5.jpg">
             <div class="card-body">
-              <h4 class="card-title">{{type.cleaningTypeTitle}}</h4>
+              <h4 class="card-title">{{type.title}}</h4>
 <!--              <p class="card-text">{{type.cleaningTypeDef}}</p>-->
             </div>
-            <div><button class="btn btn-outline-primary btn-sm" type="button" routerLink="/{{type.cleaningTypeComponent}}">Подробности</button></div>
+            <div><button class="btn btn-outline-primary btn-sm" type="button" routerLink="/{{type.angularComponent}}">Подробности</button></div>
           </div>
         </div>
       </div>

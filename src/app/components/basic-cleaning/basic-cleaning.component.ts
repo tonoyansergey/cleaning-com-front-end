@@ -13,7 +13,7 @@ import {InfoDialogComponent} from '../../dialog/info-dialog/info-dialog.componen
 })
 export class BasicCleaningComponent implements OnInit {
 
-  private basicCleanings: BasicCleaning[];
+  basicCleanings: BasicCleaning[];
 
   constructor(private basicCleaningService: BasicCleaningService, private dialogService: DialogService) {
   }

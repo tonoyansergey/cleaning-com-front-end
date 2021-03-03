@@ -5,6 +5,8 @@ import {DialogService} from '../../service/dialog.service';
 import {OrderDialogComponent} from '../../dialog/order-dialog/order-dialog.component';
 import {HttpErrorResponse} from '@angular/common/http';
 import {CleaningTypeService} from '../../service/cleaning-type.service';
+import {HomeCleaningService} from '../../service/home-cleaning.service';
+import {HomeCleaning} from '../../models/home-cleaning';
 
 @Component({
   selector: 'app-calculator',
@@ -14,12 +16,12 @@ import {CleaningTypeService} from '../../service/cleaning-type.service';
 export class CalculatorComponent implements OnInit {
 
   private form: FormGroup;
-  cleaningTypes: CleaningType[] = [];
+  cleaningTypes: HomeCleaning[] = [];
   selectedCleaningTypePricePerSquare = 150;
   selectedSquare = 0;
   cleaningPrice: number;
 
-  constructor(private cleaningTypeService: CleaningTypeService, private fb: FormBuilder, private dialogService: DialogService) {
+  constructor(private homeCleaningService: HomeCleaningService, private fb: FormBuilder, private dialogService: DialogService) {
     this.initCleaningTypeData();
     console.log(this.cleaningTypes[0]);
     this.form = fb.group({
@@ -34,7 +36,7 @@ export class CalculatorComponent implements OnInit {
   }
 
   initCleaningTypeData() {
-    this.cleaningTypeService.getAllCleaningTypes().subscribe(
+    this.homeCleaningService.getAllHomeCleanings().subscribe(
       data => {
         this.cleaningTypes = data;
       },

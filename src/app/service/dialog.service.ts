@@ -14,6 +14,7 @@ export class DialogService {
   openDialogAndPassData<T>(component: ComponentType<T>, data: Object) {
     const dialogConfig = new MatDialogConfig();
 
+    console.log('>>>>>>>>>>' + data);
     dialogConfig.data = {
       data: data
     };

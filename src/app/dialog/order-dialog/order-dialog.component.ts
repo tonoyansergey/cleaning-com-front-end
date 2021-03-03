@@ -7,6 +7,8 @@ import {QuestionAnswer} from '../../models/question-answer';
 import {CleaningType} from '../../models/cleaning-type';
 import {HttpErrorResponse} from '@angular/common/http';
 import {OrderService} from '../../service/order.service';
+import {HomeCleaningService} from '../../service/home-cleaning.service';
+import {HomeCleaning} from '../../models/home-cleaning';
 
 @Component({
   selector: 'app-order-dialog',
@@ -16,12 +18,12 @@ import {OrderService} from '../../service/order.service';
 export class OrderDialogComponent implements OnInit {
 
   form: FormGroup;
-  private cleaningTypes: CleaningType[];
-  private cleanType: CleaningType;
+  private cleaningTypes: HomeCleaning[];
+  private cleanType: HomeCleaning;
 
   private emailPattern: string = '^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@' + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
-  constructor(private orderService: OrderService, private cleaningTypeService: CleaningTypeService, private fb: FormBuilder,
+  constructor(private orderService: OrderService, private homeCleaningService: HomeCleaningService, private fb: FormBuilder,
               private dialogService: DialogService,
               private dialogRef: MatDialogRef<OrderDialogComponent>,
               @Inject(MAT_DIALOG_DATA) data) {
@@ -41,7 +43,7 @@ export class OrderDialogComponent implements OnInit {
   }
 
   initCleaningTypeData() {
-    this.cleaningTypeService.getAllCleaningTypes().subscribe(
+    this.homeCleaningService.getAllHomeCleanings().subscribe(
       data => {
         this.cleaningTypes = data;
       },

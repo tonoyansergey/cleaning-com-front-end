@@ -5,8 +5,8 @@
 
     <mat-form-field>
       <mat-select placeholder="Тип уборки" formControlName="cleaningType">
-        <mat-option [value]=cleanType>{{cleanType.cleaningTypeDef}}</mat-option>
-        <mat-option *ngFor="let cleaningType of cleaningTypes" [value]=cleaningType>{{cleaningType.cleaningTypeDef}}</mat-option>
+        <mat-option [value]=cleanType>{{cleanType.definition}}</mat-option>
+        <mat-option *ngFor="let cleaningType of cleaningTypes" [value]=cleaningType>{{cleaningType.definition}}</mat-option>
       </mat-select>
       <mat-error align="end" *ngIf="form.controls.cleaningType.errors?.required">Обязательное поле</mat-error>
     </mat-form-field>

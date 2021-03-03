@@ -24,6 +24,7 @@ import { MaintainCleaningComponent } from './components/maintain-cleaning/mainta
 import { GeneralCleaningComponent } from './components/general-cleaning/general-cleaning.component';
 import { OfficeCleaningComponent } from './components/office-cleaning/office-cleaning.component';
 import { InfoDialogComponent } from './dialog/info-dialog/info-dialog.component';
+import { HomeCleaningComponent } from './components/home-cleaning/home-cleaning.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { InfoDialogComponent } from './dialog/info-dialog/info-dialog.component'
     MaintainCleaningComponent,
     GeneralCleaningComponent,
     OfficeCleaningComponent,
-    InfoDialogComponent
+    InfoDialogComponent,
+    HomeCleaningComponent
   ],
   imports: [
     BrowserModule,

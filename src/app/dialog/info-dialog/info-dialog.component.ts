@@ -12,6 +12,7 @@ export class InfoDialogComponent implements OnInit {
 
   constructor(@Inject(MAT_DIALOG_DATA) data) {
     this.information = data.data;
+    console.log('>>>>>');
     console.log(data.data);
 
   }
