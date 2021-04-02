@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HttpErrorResponse} from '@angular/common/http';
 import {GeneralCleaning} from '../../models/general-cleaning';
 import {GeneralCleaningService} from '../../service/general-cleaning.service';
-import {BasicCleaningService} from '../../service/basic-cleaning.service';
 import {DialogService} from '../../service/dialog.service';
 import {InfoDialogComponent} from '../../dialog/info-dialog/info-dialog.component';
 
@@ -13,7 +12,7 @@ import {InfoDialogComponent} from '../../dialog/info-dialog/info-dialog.componen
 })
 export class GeneralCleaningComponent implements OnInit {
 
-  private generalCleanings: GeneralCleaning[];
+  generalCleanings: GeneralCleaning[];
 
   constructor(private generalCleaningService: GeneralCleaningService, private dialogService: DialogService) {
   }
@@ -26,6 +25,7 @@ export class GeneralCleaningComponent implements OnInit {
     this.generalCleaningService.getAllGeneralCleanings().subscribe(
       data => {
         this.generalCleanings = data;
+        console.log(data);
       },
       (err: HttpErrorResponse) => {
         console.log(err);

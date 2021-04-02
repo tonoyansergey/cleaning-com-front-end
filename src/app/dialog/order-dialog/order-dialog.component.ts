@@ -28,10 +28,20 @@ export class OrderDialogComponent implements OnInit {
               private dialogRef: MatDialogRef<OrderDialogComponent>,
               @Inject(MAT_DIALOG_DATA) data) {
     console.log(data.data.cleaningType);
-    this.cleanType = data.data.cleaningType;
+    // this.initCleaningTypeData();
+    this.homeCleaningService.getAllHomeCleanings().subscribe(
+      response => {
+        this.cleaningTypes = response;
+        this.cleanType = !!data.data.cleaningType ? data.data.cleaningType : response[0];
+
+      },
+      (err: HttpErrorResponse) => {
+        console.log(err);
+      }
+    );
     this.form = fb.group({
-      cleaningType: [data.data.cleaningType, [Validators.required]],
-      square: [data.data.radioSquare, [Validators.required]],
+      cleaningType: [data.data.cleaningType || '', [Validators.required]],
+      square: [data.data.radioSquare || '', [Validators.required]],
       clientName: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(32)]],
       clientPhoneNumber: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(32)]],
       clientEmail: ['', [Validators.pattern(this.emailPattern)]]
@@ -39,18 +49,18 @@ export class OrderDialogComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.initCleaningTypeData();
+    // this.initCleaningTypeData();
   }
 
   initCleaningTypeData() {
-    this.homeCleaningService.getAllHomeCleanings().subscribe(
-      data => {
-        this.cleaningTypes = data;
-      },
-      (err: HttpErrorResponse) => {
-        console.log(err);
-      }
-    );
+    // this.homeCleaningService.getAllHomeCleanings().subscribe(
+    //   data => {
+    //     this.cleaningTypes = data;
+    //   },
+    //   (err: HttpErrorResponse) => {
+    //     console.log(err);
+    //   }
+    // );
   }
 
   addOrder() {

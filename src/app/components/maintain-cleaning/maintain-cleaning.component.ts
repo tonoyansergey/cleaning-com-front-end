@@ -13,7 +13,7 @@ import {DialogService} from '../../service/dialog.service';
 })
 export class MaintainCleaningComponent implements OnInit {
 
-  private maintainCleanings: MaintainCleaning[];
+  maintainCleanings: MaintainCleaning[];
 
   constructor(private maintainCleaningService: MaintainCleaningService, private dialogService: DialogService) {
   }

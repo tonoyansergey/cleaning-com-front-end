@@ -1,6 +1,6 @@
-import {Injectable} from "@angular/core";
-import {ComponentType} from "@angular/cdk/overlay";
-import {MatDialog, MatDialogConfig, MatDialogRef} from "@angular/material/dialog";
+import {Injectable} from '@angular/core';
+import {ComponentType} from '@angular/cdk/overlay';
+import {MatDialog, MatDialogConfig, MatDialogRef} from '@angular/material/dialog';
 
 @Injectable({
   providedIn: 'root'
@@ -11,12 +11,25 @@ export class DialogService {
 
   }
 
+  // add map with width and height
+  openDialog<T>(component: ComponentType<T>) {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.data = {
+      data: {}
+    };
+
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    this.dialog.open(component, dialogConfig);
+  }
+
   openDialogAndPassData<T>(component: ComponentType<T>, data: Object) {
     const dialogConfig = new MatDialogConfig();
 
     console.log('>>>>>>>>>>' + data);
     dialogConfig.data = {
-      data: data
+      data
     };
 
     dialogConfig.disableClose = false;
@@ -25,7 +38,7 @@ export class DialogService {
     this.dialog.open(component, dialogConfig);
   }
 
-  openDialogAndClosePrev<T,D> (component: ComponentType<T>, dialogRef: MatDialogRef<D>) {
+  openDialogAndClosePrev<T, D>(component: ComponentType<T>, dialogRef: MatDialogRef<D>) {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = true;
@@ -35,25 +48,16 @@ export class DialogService {
     this.dialog.open(component, dialogConfig);
   }
 
-  openDialogPassDataAndClosePrev<T,D> (component: ComponentType<T>, dialogRef: MatDialogRef<D>, data: Object) {
+  openDialogPassDataAndClosePrev<T, D>(component: ComponentType<T>, dialogRef: MatDialogRef<D>, data: Object) {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.data = {
-      data: data
+      data
     };
 
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogRef.close();
-    this.dialog.open(component, dialogConfig);
-  }
-
-  // add map with width and height
-  openDialog<T>(component: ComponentType<T>) {
-    const dialogConfig = new MatDialogConfig();
-
-    dialogConfig.disableClose = false;
-    dialogConfig.autoFocus = true;
     this.dialog.open(component, dialogConfig);
   }
 }
